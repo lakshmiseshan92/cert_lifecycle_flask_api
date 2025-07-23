@@ -59,3 +59,7 @@ def export_pdf():
         path = generate_pdf(logs)
         return jsonify({"message": "PDF generated", "path": path})
     return jsonify({"message": "No log found."})
+
+@app.route("/", methods=["GET"])
+def root():
+    return "SmartCert Flask API is running.", 200
