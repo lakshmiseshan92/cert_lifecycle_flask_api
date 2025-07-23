@@ -5,7 +5,7 @@ import os
 from pdf_utils import generate_pdf
 
 app = Flask(__name__)
-LOG_FILE = "renew_log.json"
+LOG_FILE = os.environ.get("RENEW_LOG_PATH", "renew_log.json")
 
 expiry_state = {
     "domain": "demo.smartcert.io",
